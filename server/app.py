@@ -28,7 +28,7 @@ def bakeries():
         bakery_dict = bakery.to_dict()
         bakery_list.append(bakery_dict)
 
-    response = make_response(jsonify(bakery_list), 200)
+    response = make_response(bakery_list, 200)
 
     return response
 
@@ -57,7 +57,7 @@ def most_expensive_baked_good():
     top_good = BakedGood.query.order_by(BakedGood.price.desc()).first()
     top_dict = top_good.to_dict()
 
-    response = make_response(jsonify(top_dict), 200)
+    response = make_response(top_dict, 200)
     return response
 
 
